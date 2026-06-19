@@ -9,7 +9,7 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const priceCards = document.querySelectorAll(".price-card");
 const priceCount = document.querySelector("#priceCount");
 const priceGrid = document.querySelector(".price-grid");
-const whatsappNumber = "12042984337";
+const whatsappNumber = "14313368788";
 
 function openWhatsApp(message) {
   window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
