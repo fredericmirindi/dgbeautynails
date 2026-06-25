@@ -9,7 +9,7 @@
 // ===== CONFIG ===============================================
 // Paste your Apps Script Web App URL here after running SETUP.md.
 // Until then, the widget gracefully falls back to email/WhatsApp.
-var ENDPOINT = "";
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbwtS9PEZr-vPT_fs4MICJQ3qCk1wE-4yvewZnd0TZfNdHneuytTKaBvff-LKF1uOjIz/exec";
 var SALON_EMAIL = "nailswinnipeg@gmail.com";
 var SALON_WHATSAPP = "14313368788";
 var TZ = "America/Winnipeg";
