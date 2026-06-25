@@ -270,7 +270,7 @@ function submitBooking(){
   var btn = document.getElementById("dgb-submit"); if(btn){ btn.disabled=true; btn.innerHTML="<span class='dgb-spin'></span>Sending..."; }
   var payload = buildPayload();
   if(ENDPOINT){
-    fetch(ENDPOINT, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body:JSON.stringify(payload) })
+    fetch(ENDPOINT, { method:"POST", mode:"no-cors", keepalive:true, headers:{ "Content-Type":"text/plain;charset=utf-8" }, body:JSON.stringify(payload) })
       .then(function(){ state.step=5; render(); })
       .catch(function(){ state.step=5; render(); }); // no-cors style; assume delivered
   } else {
