@@ -288,11 +288,23 @@ function renderDone(body){
   body.querySelector("#dgb-restart").addEventListener("click", function(){ state={ service:null,date:null,time:null,name:"",phone:"",email:"",notes:"",step:1,viewMonth:null }; render(); });
 }
 
+
 // ===== INIT =================================================
+function smoothTo(id){ var t=document.getElementById(id); if(t) t.scrollIntoView({ behavior:"smooth", block:"start" }); }
+function wireAnchors(){
+  var links = document.querySelectorAll('a[href="#reservation"], a[href$="#reservation"]');
+  links.forEach(function(a){ a.addEventListener("click", function(e){ e.preventDefault(); smoothTo("reservation"); }); });
+}
 function init(){
-  root = document.getElementById("dgb-booking");
-  if(!root){ root = el("section", { id:"dgb-booking", style:"padding:60px clamp(16px,5vw,40px)" }); var contact=document.getElementById("contact"); if(contact && contact.parentNode){ contact.parentNode.insertBefore(root, contact); } else { document.body.appendChild(root); } }
+  root = document.getElementById("reservation");
+  if(!root){
+    root = el("section", { id:"reservation", style:"padding:64px clamp(16px,5vw,40px);scroll-margin-top:90px" });
+    var contact = document.getElementById("contact");
+    if(contact && contact.parentNode){ contact.parentNode.insertBefore(root, contact); }
+    else { document.body.appendChild(root); }
+  }
   render();
+  wireAnchors();
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
